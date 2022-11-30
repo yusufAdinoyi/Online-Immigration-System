@@ -1,0 +1,57 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+}
+ul{
+  list-style: none;
+}
+img{
+  display: block;
+}
+.logo{
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+}
+nav{
+  align-items: center;
+}
+nav ul li{
+  margin: .2rem;
+}
+.product-select{
+  width: 100%;
+}
+#product-quantity{
+  width:50%;
+}
+.bg-deam{background: #ddd; border-bottom: 1px solid grey;}
+
+/* making saved reciept container hide initially */
+#saved-reciept{
+  display: none;
+}
+/* alert */
+.success, .error {  
+  color: white;
+  padding: 5px;
+  margin: 5px 0 15px 0;
+  border-radius: 5px 0px 5px 0px;
+}
+.success {
+  background: rgba(35, 158, 90, 0.781);
+}
+.error {
+  background: rgba(238, 54, 54, 0.822);
+}
+.btn-block{display: block;}
+
+#loginForm{
+  width: 40%;
+  margin: 3rem auto;
+}

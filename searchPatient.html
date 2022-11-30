@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link href="fontawesome-free-5.4.2-web/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Registration | Immigration System</title>
+  <style>
+    @media print{
+      body *{
+        visibility: hidden;
+      }
+      #patientForm *{
+        visibility: visible;
+      }
+      #patientForm {
+        position: absolute;
+        top: 0px;
+      }
+    }
+  </style>
+</head>
+<body>
+    <header id="sub-header">
+        <nav id="main-nav">
+        <div class="container">
+            <div class="header-logo">
+            <img src="logo.jpg" alt=""class="logo">
+            <marquee behavior="" direction="left"><h3>IMMIGRATION<span class="primary-color">PROCESSING</span></h3></marquee>
+            </div>
+            <ul>
+            <li><a href="homepage.html">Home page</a></li>
+            <li><a href="registrationForm.html">Apply Immigrants</a></li>
+            <li><a href="#" class="current">Search Immigrants</a></li>
+            <li><a href="patientDatabase.html">View database</a></li>
+            </ul>
+        </div>
+        </nav>
+    </header>
+    <div class="bodyContainer">
+        <div class="titleDiv">
+            <h1 class="l-header">SEARCH <span class="primary-color">IMMIGRANT</span></h1>
+            <p class="lead">Search Immigrants by their ID</p>
+        </div>
+        <div class="SearchDiv">
+            <label>
+              <input type="text" placeholder="Enter Immigrant ID" id="patient_id"/>
+            </label>
+            <button class="unit" type="button"><i class="fas fa-search"></i></button>
+          </div>
+          <div class="error-message">Wrong ID, Please enter correct ID</div>
+          <section id="patientForm">
+              <div class="row headerName1">
+                  <div class="rowHeaderName">
+                    <h2>FEDERAL REPUBLIC OF NIGERIA <span class="primary-color">IMMIGRATION FORM</span></h2>
+                    <label>First Name: <span class="userSaves" id="first_name"></span></label>
+                  </div>
+                  <img src="" alt="passport" id="passportUpload" width="150px" height="100px">
+              </div>
+
+              <div class="row headerName2">
+                <div class="rowHeaderName">
+                  <h2>FEDERAL REPUBLIC OF NIGERIA <span class="primary-color">IMMIGRATION FORM</span></h2>
+                  <img src="" alt="passport" id="passportUpload" width="150px" height="100px">
+                </div>
+                <label>First Name: <span class="userSaves" id="first_name"></span></label>
+            </div>
+             
+              <div class="row">
+                <label >Last Name: <span id="last_name" class="userSaves"></span></label>
+                <label >Contact: <span id="phone_number" class="userSaves"></span></label>
+              </div>
+              <div class="row">
+                  <label>Age: <span id="age" class="userSaves"></span></label>
+                  <label>Gender: <span id="gender" class="userSaves"></span></label>
+                  <label>Marrital Status: <span id="blood_group" class="userSaves"></span></label>
+              </div>
+              <div class="row">
+                  <label>Residential Address: <span id="res_address" class="userSaves"></span></label>
+                  <label>Email: <span id="email_address" class="userSaves"></span></label>
+              </div>
+              <div class="row">
+                  <label>User ID: <span id="userid" class="userSaves"></span></label>
+                  <label>Passport No.: <span id="passportnumber" class="userSaves"></span></label>
+              </div>
+              <div class="row">
+                  <label>Date of Leaving: <span id="dateofleaving" class="userSaves"></span></label>
+                  <label>Date of Return: <span id="dateofreturn" class="userSaves"></span></label>
+              </div>
+              <button class="text-center" onclick="window.print()">Print</button>
+          </section>
+    </div>
+</body>
+<script src="searchPatient.js"></script>
+</html>

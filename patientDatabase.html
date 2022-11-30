@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link href="fontawesome-free-5.4.2-web/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Registration | Immigration System</title>
+</head>
+<body>
+    <header id="sub-header">
+        <nav id="main-nav">
+        <div class="container">
+            <div class="header-logo">
+            <img src="logo.jpg" alt=""class="logo">
+            <marquee behavior="" direction="left"><h3>IMMIGRANTS<span class="primary-color">DATABASE</span></h3></marquee>
+            </div>
+            <ul>
+            <li><a href="homepage.html">Home page</a></li>
+            <li><a href="registrationForm.html">Apply Immigrant</a></li>
+            <li><a href="searchPatient.html">Search Immigrants</a></li>
+            <li><a href="#" class="current">View Database</a></li>
+            </ul>
+        </div>
+        </nav>
+    </header>
+    <div class="bodyContainer">
+        <div class="titleDiv">
+            <h1 class="l-header">IMMIGRANTS<span class="primary-color">DATABASE</span></h1>
+            <p class="lead"></p>
+        </div>
+        <div class="SearchDiv" style="margin: .5rem 2rem 3rem;">
+            <label>
+              <input type="text" placeholder="Search by ImmigrantsID" id="searchBox"/>
+            </label>
+            <button class="unit" type="button"><i class="fas fa-search"></i></button>
+          </div>
+        <table>
+                <tr>
+                    <th>Immigrants ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Phone No.</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Marrital Status</th>
+                    <th>Email Address</th>
+                    <th>Home Address</th>
+                    <th>Passport No.</th>
+                    <th>Purpose of Leaving</th>
+                    <th>Date Issue</th>
+                    <th>Date Expire</th>
+                    <th>Date of Leaving</th>
+                    <th>Returning Date</th>
+                </tr>
+        </table>
+    </div>
+    <script>
+    patients = JSON.parse(localStorage.getItem('patients'));
+    let myTable = document.querySelector('table');
+    let tableBody = document.querySelector('tbody');
+    patients.forEach(function(patient){
+        if(patient.passport){
+                delete patient.passport;
+            }
+        let tableRow = document.createElement('tr');
+        Object.values(patient).forEach(function(eachUser){
+            let tableData = document.createElement('td');
+            let textNode = document.createTextNode(eachUser);
+            tableData.appendChild(textNode);
+            tableRow.appendChild(tableData);
+            myTable.appendChild(tableRow)
+        })
+        document.querySelector('#searchBox').addEventListener('keydown', function(e){
+            let patientSearch = e.target.value.toLowerCase();
+            document.querySelectorAll('tr').forEach(function(patientRows){
+               const patientRow =patientRows.firstChild.textContent;
+               if(patientRow.toLowerCase().indexOf(patientSearch) != -1){
+                   patientRows.style.display = 'block';
+               }else{
+                patientRows.style.display = 'none';
+               }
+            })
+            
+        })
+
+    })
+    </script>
+</body>
+</html>
